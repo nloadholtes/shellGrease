@@ -7,4 +7,4 @@
 # and if any of them contain a .hg dir it will
 # attempt to go a 'hg pull' to pull down anything.
 #
-for x in `ls` ; do if [ -d $x/.hg ]; then echo "--->Checking $x"; cd $x; hg pull; cd ..; fi; done
+for x in `ls` ; do if [ -d $x/.hg ]; then echo "--->Checking $x"; cd $x; hg pull $1; cd ..; fi; done
