@@ -1,0 +1,6 @@
+#
+# psa
+# Prints out the 'ps aux' report for a given string
+#
+# Nick Loadholtes <nick@ironboundsoftware.com>
+ps aux | grep --color $1
