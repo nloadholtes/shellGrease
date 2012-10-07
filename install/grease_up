@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+wget --quiet -O - https://github.com/nloadholtes/shellGrease/tarball/master | tar zxv --strip=1
