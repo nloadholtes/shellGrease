@@ -7,6 +7,7 @@ from ConfigParser import SafeConfigParser
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+import socket
 
 MAIL_TO = ""
 MAIL_FROM = ""
@@ -21,7 +22,7 @@ def _send_email(subject, body, parser):
     msg['To'] = MAIL_TO
 
     msg.attach(MIMEText(str(body), 'plain'))
-    print msg
+    #print msg
     smtp = smtplib.SMTP(parser.get("MAIL", "mail_server"),
                         parser.get("MAIL", "mail_port"))
     smtp.ehlo()
@@ -32,8 +33,7 @@ def _send_email(subject, body, parser):
         smtp.login(parser.get("MAIL", "login"), password)
     except:
         pass
-    smtp.sendmail('<Job finished notification>%s' % MAIL_FROM,
-                  MAIL_TO, msg.as_string())
+    smtp.sendmail(MAIL_FROM, MAIL_TO, msg.as_string())
     smtp.close()
 
 def _startjob(args):
@@ -52,5 +52,5 @@ if __name__ == "__main__":
     parser.read(os.path.expanduser('~/shellGrease.ini'))
     args = sys.argv[1:]
     print(_startjob(args))
-    body = "The following command \n-----\n%s\n-----\nreturned:%s"%(args, _startjob(args))
+    body = "The following command \n-----\n%s>%s\n-----\nreturned:%s"%(socket.gethostname(), ' '.join(args), _startjob(args))
     _send_email("Finished processing", body, parser)
