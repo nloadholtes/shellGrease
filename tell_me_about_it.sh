@@ -4,6 +4,9 @@ import sys
 import os
 import subprocess
 from ConfigParser import SafeConfigParser
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
 MAIL_TO = ""
 MAIL_FROM = ""
@@ -17,14 +20,18 @@ def _send_email(subject, body, parser):
     msg['From'] = MAIL_FROM
     msg['To'] = MAIL_TO
 
-    msg.attach(MIMEText(body, 'plain'))
+    msg.attach(MIMEText(str(body), 'plain'))
     print msg
     smtp = smtplib.SMTP(parser.get("MAIL", "mail_server"),
                         parser.get("MAIL", "mail_port"))
     smtp.ehlo()
     smtp.starttls()
     smtp.ehlo()
-    smtp.login(parser.get("MAIL", "login"), parser.get("MAIL", "password"))
+    try:
+        password = parser.get("MAIL", "password")
+        smtp.login(parser.get("MAIL", "login"), password)
+    except:
+        pass
     smtp.sendmail('<Job finished notification>%s' % MAIL_FROM,
                   MAIL_TO, msg.as_string())
     smtp.close()
@@ -45,4 +52,5 @@ if __name__ == "__main__":
     parser.read(os.path.expanduser('~/shellGrease.ini'))
     args = sys.argv[1:]
     print(_startjob(args))
-    _send_email("Quick test", _startjob(args), parser)
+    body = "The following command \n-----\n%s\n-----\nreturned:%s"%(args, _startjob(args))
+    _send_email("Finished processing", body, parser)
