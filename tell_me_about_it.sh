@@ -33,7 +33,7 @@ def _send_email(subject, body, parser):
         smtp.login(parser.get("MAIL", "login"), password)
     except:
         pass
-    smtp.sendmail(MAIL_FROM, MAIL_TO, msg.as_string())
+    smtp.sendmail(MAIL_FROM, MAIL_TO.split(), msg.as_string())
     smtp.close()
 
 def _startjob(args):
