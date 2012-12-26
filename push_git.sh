@@ -10,4 +10,4 @@
 # Note if your local repo isn't ready to push, you'll
 # get the normal git error messages. 
 #
-for x in `ls` ; do if [ -d $x/.git ]; then echo "--->Pushing $x"; cd $x; git push; cd ..; fi; done
+for x in $(ls) ; do if [ -d $x/.git ]; then echo "--->Pushing $x"; cd $x; git push; cd ..; fi; done

@@ -9,4 +9,4 @@
 # the svn repository we are pointed at.
 #
 
-for x in `ls` ; do if [ -d $x/.git ]; then echo "--->Checking $x"; cd $x; git svn rebase ; cd ..; fi; done
+for x in $(ls) ; do if [ -d $x/.git ]; then echo "--->Checking $x"; cd $x; git svn rebase ; cd ..; fi; done

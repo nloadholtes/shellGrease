@@ -3,4 +3,4 @@
 # Gives a count of files in the first subdir
 #
 # Nick Loadholtes <nick@ironboundsoftware.com>
-for x in `ls` ; do if [ -d $x ]; then echo $x `ls $x | wc -l`; fi; done
+for x in $(ls) ; do if [ -d $x ]; then echo $x $(ls $x | wc -l); fi; done

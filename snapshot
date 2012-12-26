@@ -3,4 +3,4 @@
 # tails a file, piping output to screen and file.
 #
 # Nick Loadholtes <nick@ironboundsoftware.com>
-tail -f $1 | tee $1.`date +%Y_%m_%d_%H_%M`
+tail -f $1 | tee $1.$(date +%Y_%m_%d_%H_%M)

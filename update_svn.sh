@@ -7,4 +7,4 @@
 #
 # Nick Loadholtes, 2/14/2011
 
-for x in `ls`;  do echo $x; cd $x; svn up; cd ..; done;
+for x in $(ls);  do echo $x; cd $x; svn up; cd ..; done;

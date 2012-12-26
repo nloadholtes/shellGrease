@@ -7,4 +7,4 @@
 # and if any of them contain a .git dir it will
 # attempt to go a 'git fetch' to pull down anything.
 #
-for x in `ls` ; do if [ -d $x/.git ]; then echo "--->Checking $x"; cd $x; git fetch; cd ..; fi; done
+for x in $(ls) ; do if [ -d $x/.git ]; then echo "--->Checking $x"; cd $x; git fetch; cd ..; fi; done
