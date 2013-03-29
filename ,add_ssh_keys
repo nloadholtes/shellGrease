@@ -1,2 +1,2 @@
 scp -P$2 ~/.ssh/id_rsa.pub $1:
-ssh -p$2 $1 "mkdir .ssh; cat id_rsa.pub >> .ssh/authorized_keys2; chmod 600 .ssh/authorized_keys2; rm id_rsa.pub"
+ssh -p$2 $1 "mkdir .ssh; chmod 700 .ssh; cat id_rsa.pub >> .ssh/authorized_keys2; chmod 600 .ssh/authorized_keys2; rm id_rsa.pub"
