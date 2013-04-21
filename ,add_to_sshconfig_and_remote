@@ -1,0 +1,6 @@
+echo "
+Host $1
+Hostname $2
+User $3" >> ~/.ssh/config
+
+ssh-copy-id $2
