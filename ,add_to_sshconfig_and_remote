@@ -1,7 +1,9 @@
+# Need to add in logic to check params, show help, etc.
+
 echo "
 Host $1
 Hostname $2
 User $3
 Port $4" >> ~/.ssh/config
 
-ssh-copy-id $3@$2
+ssh-copy-id $1
