@@ -1,4 +1,9 @@
-# Need to add in logic to check params, show help, etc.
+if [ -z "$1" ]
+  then
+    echo "No argumentis supplied, looking for:"
+    echo "      Host, hostname, user, port"
+    exit -1
+fi
 
 echo "
 Host $1
