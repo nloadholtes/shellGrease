@@ -1,6 +1,6 @@
-if [ -z "$1" ]
+if [ $# -lt 4 ]
   then
-    echo "No argumentis supplied, looking for:"
+    echo "Not enough arguments supplied, looking for:"
     echo "      Host, hostname, user, port"
     exit -1
 fi
