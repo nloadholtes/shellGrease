@@ -1,4 +1,10 @@
 #
 # Kill all the processes that match the given grep pattern.
+f [ $# -lt 1 ]
+  then
+    echo "Not enough arguments supplied, looking for:"
+    echo "      string_in_process(es)_that_you_want_to_kill"
+    exit -1
+fi
 
 psa $1 | awk '{print $2}' | xargs kill -9
