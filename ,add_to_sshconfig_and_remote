@@ -1,7 +1,7 @@
 if [ $# -lt 4 ]
   then
     echo "Not enough arguments supplied, looking for:"
-    echo "      Host, hostname, user, port"
+    echo "      Alias_name, Ip/address, user, port"
     exit -1
 fi
 
