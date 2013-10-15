@@ -4,13 +4,27 @@ wget https://github.com/git/git/archive/master.zip
 #
 # build git
 unzip master.zip
+cd git-master
+make configure
+make all
+sudo make install
 
 
 wget http://selenic.com/hg/archive/tip.zip
 #
 # build mercurial
 unzip tip.zip
+cd Mercurial-*
+make
+sudo make install
 
+#Get the dotfiles
+cd /tmp
+https://bitbucket.org/nloadholtes/dotfiles/raw/e414dbeaa4e4739d725179c77a0df6aaf6fa0fc0/install.sh > install.sh
+chmod +x install.sh
+./install.sh
 
 #install shell grease
+mkdir ~/bin
+cd ~/bin
 wget --quiet -O - https://github.com/nloadholtes/shellGrease/tarball/master | tar zxv --strip=1
