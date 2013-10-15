@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 cd /tmp
 
-sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto
+sudo apt-get install -Y libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto build-essential autoconf
 
 #
 # build git
