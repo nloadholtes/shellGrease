@@ -1,2 +1,12 @@
 #!/usr/bin/env sh
+cd /tmp
+wget https://github.com/git/git/archive/master.zip
+unzip master.zip
+#
+# build git
+wget http://selenic.com/hg/archive/tip.zip
+#
+# build mercurial
+
+#install shell grease
 wget --quiet -O - https://github.com/nloadholtes/shellGrease/tarball/master | tar zxv --strip=1
