@@ -33,3 +33,10 @@ chmod +x install.sh
 mkdir ~/bin
 cd ~/bin
 wget --quiet -O - https://github.com/nloadholtes/shellGrease/tarball/master | tar zxv --strip=1
+
+#
+#Fix pip
+sudo pip install --upgrade setuptools
+sudo pip install --upgrade pip
+sudo apt-get remove python-pip
+sudo ln -s /usr/local/bin/pip /usr/bin/pip
