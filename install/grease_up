@@ -25,7 +25,7 @@ sudo make install
 
 #Get the dotfiles
 cd /tmp
-wget --quiet -O - https://bitbucket.org/nloadholtes/dotfiles/raw/e414dbeaa4e4739d725179c77a0df6aaf6fa0fc0/install.sh > install.sh
+wget --quiet -O - https://bitbucket.org/nloadholtes/dotfiles/raw/1dea3617377aaf10d5a8f6182054a342fc062091/install.sh > install.sh
 chmod +x install.sh
 ./install.sh
 
