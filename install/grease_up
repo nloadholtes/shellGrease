@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 cd /tmp
 sudo rm -rf git-master/ install.sh master.zip tip.zip Mercurial-*
-sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto build-essential autoconf python-dev pip
+sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto build-essential autoconf python-dev python-pip
 
 #
 # build git
