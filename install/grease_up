@@ -1,26 +1,29 @@
 #!/usr/bin/env sh
 cd /tmp
-wget https://github.com/git/git/archive/master.zip
+
+sudo apt-get install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto
+
 #
 # build git
+wget https://github.com/git/git/archive/master.zip
 unzip master.zip
 cd git-master
+./configure
 make configure
 make all
 sudo make install
 
-
-wget http://selenic.com/hg/archive/tip.zip
 #
 # build mercurial
+wget http://selenic.com/hg/archive/tip.zip
 unzip tip.zip
 cd Mercurial-*
-make
+make all
 sudo make install
 
 #Get the dotfiles
 cd /tmp
-https://bitbucket.org/nloadholtes/dotfiles/raw/e414dbeaa4e4739d725179c77a0df6aaf6fa0fc0/install.sh > install.sh
+wget --quiet -O - https://bitbucket.org/nloadholtes/dotfiles/raw/e414dbeaa4e4739d725179c77a0df6aaf6fa0fc0/install.sh > install.sh
 chmod +x install.sh
 ./install.sh
 
