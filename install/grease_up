@@ -9,8 +9,8 @@ wget https://github.com/git/git/archive/master.zip
 unzip master.zip
 cd /tmp
 cd git-master
-./configure
 make configure
+./configure
 make all
 sudo make install
 
