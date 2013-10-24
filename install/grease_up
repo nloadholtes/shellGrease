@@ -29,11 +29,6 @@ wget --quiet -O - https://bitbucket.org/nloadholtes/dotfiles/raw/1dea3617377aaf1
 chmod +x install.sh
 ./install.sh
 
-#install shell grease
-mkdir ~/bin
-cd ~/bin
-wget --quiet -O - https://github.com/nloadholtes/shellGrease/tarball/master | tar zxv --strip=1
-
 #
 #Fix pip
 sudo pip install --upgrade setuptools
