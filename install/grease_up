@@ -1,13 +1,15 @@
 #!/usr/bin/env sh
 cd /tmp
-sudo rm -rf git-master/ install.sh master.zip tip.zip Mercurial-*
+WORK_DIR=shellGrease_installer
+rm -rf $WORK_DIR
+mkdir $WORK_DIR
+cd $WORK_DIR
 sudo apt-get -y install libcurl4-gnutls-dev libexpat1-dev gettext libz-dev libssl-dev asciidoc xmlto build-essential autoconf python-dev python-pip
 
 #
 # build git
 wget https://github.com/git/git/archive/master.zip
 unzip master.zip
-cd /tmp
 cd git-master
 make configure
 ./configure
@@ -16,7 +18,7 @@ sudo make install
 
 #
 # build mercurial
-cd /tmp
+cd /tmp/$WORK_DIR
 wget http://selenic.com/hg/archive/tip.zip
 unzip tip.zip
 cd Mercurial-*
@@ -24,7 +26,7 @@ make all
 sudo make install
 
 #Get the dotfiles
-cd /tmp
+cd /tmp/$WORK_DIR 
 wget --quiet -O - https://bitbucket.org/nloadholtes/dotfiles/raw/1dea3617377aaf10d5a8f6182054a342fc062091/install.sh > install.sh
 chmod +x install.sh
 ./install.sh
