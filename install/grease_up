@@ -15,6 +15,7 @@ make configure
 ./configure
 make all
 sudo make install
+sudo cp contrib/completion/git-completion.bash /etc/bash_completion.d/
 
 #
 # build mercurial
