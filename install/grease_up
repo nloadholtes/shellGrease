@@ -24,6 +24,7 @@ unzip tip.zip
 cd Mercurial-*
 make all
 sudo make install
+sudo cp contrib/bash_completion /etc/base_completion.d/mercurial
 
 #Get the dotfiles
 cd /tmp/$WORK_DIR 
