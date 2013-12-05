@@ -11,6 +11,15 @@
 # This script is intended to be used in a pre-push hook to
 # prevent the user from pushing code at a bad time.
 #
+# For example, in a .hg/hgrc file you could have an entry
+# like this:
+#
+#       [hooks]
+#       pre-push.jenkins = clear_to_push.py 10.0.1.100:7000 project_job
+#
+# And that will run this script before pushing to ensure that
+# project_job is currently not red.
+#
 import json
 import urllib2
 import sys
