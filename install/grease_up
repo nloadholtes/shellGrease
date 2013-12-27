@@ -13,7 +13,7 @@ unzip master.zip
 cd git-master
 make configure
 ./configure
-make all
+make -j3 all
 sudo make install
 sudo cp contrib/completion/git-completion.bash /etc/bash_completion.d/
 
@@ -23,7 +23,7 @@ cd /tmp/$WORK_DIR
 wget http://selenic.com/hg/archive/tip.zip
 unzip tip.zip
 cd Mercurial-*
-make all
+make -j3 all
 sudo make install
 sudo cp contrib/bash_completion /etc/base_completion.d/mercurial
 
