@@ -15,6 +15,10 @@ do
     if [ -d $x/.git ]; then
         echo "--->Checking $x";
         cd $x;
+        if [ $1 == "-m" ]; then
+            echo "Switch to master branch";
+            git checkout master;
+        fi;
         git pull;
         cd ..;
     fi;
