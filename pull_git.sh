@@ -10,4 +10,12 @@
 # The idea is this can be used to quickly bring everything
 # up to date as quickly as possible.
 #
-for x in $(ls) ; do if [ -d $x/.git ]; then echo "--->Checking $x"; cd $x; git pull; cd ..; fi; done
+for x in $(ls) ;
+do
+    if [ -d $x/.git ]; then
+        echo "--->Checking $x";
+        cd $x;
+        git pull;
+        cd ..;
+    fi;
+done
