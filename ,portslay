@@ -1,0 +1,5 @@
+#
+# portslay - Kills processes on a given port
+# Copied from https://github.com/justinabrahms/jlilly-bashy-dotfiles/blob/master/.shell/functions#L123
+#
+kill -9 `lsof -i tcp:$1 | tail -1 | awk '{ print $2;}'`
