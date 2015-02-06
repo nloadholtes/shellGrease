@@ -1,0 +1,6 @@
+#
+# Grabs the specified column from something. Example: git status -s | awk '{print $2}'
+#
+# copied from: https://developer.atlassian.com/blog/2015/02/ten-tips-for-wonderful-bash-productivity/
+#
+awk -v col=$1 '{print $col}'
