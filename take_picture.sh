@@ -4,7 +4,10 @@
 # Nick Loadholtes <nick@ironboundsoftware.com>
 #
 # if linux
-mplayer -vo png -frames 1 tv://
-
-# if osx
-# to do
+if [[ $(uname) == 'Linux' ]]; then
+  mplayer -vo png -frames 1 tv://
+else
+  # if osx
+  # to do
+  echo "Running on a mac?"
+fi
