@@ -5,7 +5,7 @@
 #
 # if linux
 if [[ $(uname) == 'Linux' ]]; then
-  mplayer -vo png -frames 1 tv://
+  streamer -q -s 2560x1440 -o ~/commit_pics/nick-$(date +%Y_%m_%d-%H_%M_%S).jpeg
 else
   # if osx
   # to do
