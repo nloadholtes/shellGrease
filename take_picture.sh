@@ -10,4 +10,5 @@ else
   # if osx
   # to do
   echo "Running on a mac?"
+  imagesnap
 fi
