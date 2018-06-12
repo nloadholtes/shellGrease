@@ -1,0 +1,4 @@
+#
+# Help fetch/pull a Pull request from Github
+SOURCE=${2:-origin}
+git fetch $SOURCE pull/$1/head:pr-$1
