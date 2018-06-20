@@ -7,3 +7,4 @@ fi
 
 SOURCE=${2:-upstream}
 git fetch $SOURCE pull/$1/head:pr-$1
+git co pr-$1
